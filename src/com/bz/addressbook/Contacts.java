@@ -2,8 +2,9 @@ package com.bz.addressbook;
 
 public class Contacts {
 
-    String firstName, lastName, address, city, state, emailId;
-    int zipCode, phoneNumber;
+    private String firstName, lastName, address, city, state, emailId;
+    private int zipCode;
+    private long phoneNumber;
 
 
     public String getFirstName() {
@@ -62,11 +63,11 @@ public class Contacts {
         this.zipCode = zipCode;
     }
 
-    public int getPhoneNumber() {
+    public long getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(long phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

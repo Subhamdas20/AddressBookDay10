@@ -41,7 +41,7 @@ public class AddressBook {
     public void editContacts(String name) {
 
         for (Contacts contact : contact_Details) {
-            if (name.equalsIgnoreCase(contact.firstName)) {
+            if (name.equalsIgnoreCase(contact.getFirstName())) {
                 System.out.println("Entered Name found in the contacts");
                 System.out.println("Enter the updated first name");
                 String firstName = sc.next();
@@ -65,7 +65,7 @@ public class AddressBook {
                 int zipcode = sc.nextInt();
                 contact.setZipCode(zipcode);
                 System.out.println("Enter the updated phoneNumber");
-                int phoneNumber = sc.nextInt();
+                long phoneNumber = sc.nextInt();
                 contact.setPhoneNumber(phoneNumber);
             } else
                 System.out.println("Entered name not  found in the AddressBook");
@@ -74,7 +74,7 @@ public class AddressBook {
 
     public void deleteContact(String name) {
         for (Contacts contact : contact_Details) {
-            if (name.equalsIgnoreCase(contact.firstName)) {
+            if (name.equalsIgnoreCase(contact.getFirstName())) {
                 System.out.println("Entered Name found in the contacts, deleting contact");
                 contact_Details.remove(contact);
             } else
@@ -113,7 +113,6 @@ public class AddressBook {
 
             switch (userChoice) {
                 case 1:
-
                     if (choose_AddressBook == 1) book1.addContacts();
                     else if (choose_AddressBook == 2) book2.addContacts();
                     else if (choose_AddressBook == 3) book3.addContacts();
