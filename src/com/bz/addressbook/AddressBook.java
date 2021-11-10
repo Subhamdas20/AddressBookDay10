@@ -6,9 +6,11 @@ import java.util.Scanner;
 
 public class AddressBook {
     ArrayList<Contacts> contact_Details = new ArrayList<>();
-
     static Scanner sc = new Scanner(System.in);
 
+    /**
+     * used to add new contact
+     */
     public void addContacts() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of contacts you want to save");
@@ -37,6 +39,12 @@ public class AddressBook {
             contact_Details.add(details);
         }
     }
+
+    /**
+     * used to editContacts
+     *
+     * @param name is used to edit contacts using namw
+     */
 
     public void editContacts(String name) {
 
@@ -72,6 +80,11 @@ public class AddressBook {
         }
     }
 
+    /**
+     * deleteContact is used to delete
+     *
+     * @param name is used to delete the contact based upon names
+     */
     public void deleteContact(String name) {
         for (Contacts contact : contact_Details) {
             if (name.equalsIgnoreCase(contact.getFirstName())) {
@@ -82,6 +95,9 @@ public class AddressBook {
         }
     }
 
+    /**
+     * showContacts is used to display contacts
+     */
     public void showContacts() {
         int i = 1;
         for (Contacts contact : contact_Details) {
@@ -90,7 +106,7 @@ public class AddressBook {
             i++;
         }
     }
-    
+
     public static void main(String[] args) {
         HashMap<String, AddressBook> addressBooks = new HashMap<>();
         AddressBook book1 = new AddressBook();
